@@ -1,0 +1,89 @@
+{
+	"main c function": {
+		"prefix": "int main",
+		"body": [
+			"int main(int argc, char **argv){",
+			"\t$0",
+			"}"
+		],
+		"description": "C compiler entry point "
+	},
+	"Code snippet for if ()": {
+		"prefix": "if",
+		"body": [
+			"if ($1){",
+			"\t$0",
+			"}"
+		],
+		"description": "if conditional statement"
+	},
+	"for loop": {
+		"prefix": "for",
+		"body": [
+			"for ($1; $2; ++$3){",
+			"\t$0",
+			"}"
+		],
+		"description": "C for loop"
+	},
+	"while loop": {
+		"prefix": "while",
+		"body": [
+			"while ($1){",
+			"\t$0",
+			"}"
+		],
+		"description": "C while loop"
+	},
+	"switch case": {
+		"prefix": "switch",
+		"body": [
+			"switch ($1){",
+			"\tcase $2: $6\tbreak;",
+			"\tcase $3: $7\tbreak;",
+			"\tcase $4: $8\tbreak;",
+			"\tcase $5: $9\tbreak;",
+			"}"
+		],
+		"description": "C switch case"
+	},
+	"ifdef": {
+		"prefix": "#ifdef",
+		"body": [
+			"#ifdef $1",
+			"\t#define $2\n\t$0",
+			"#endif"
+		],
+		"description": "if macro is defined"
+	},
+	"ifndef": {
+    "prefix": "#ifndef",
+    "body": [
+        "#ifndef $1",
+        "\t#define $1 $2\n\t$0",
+        "#endif"
+    ],
+    "description": "if macro is not defined"
+	},
+	"if": {
+    "prefix": "#ifelif",
+    "body": [
+        "#if $1",
+        "\t$3",
+				"#elif $2",
+        "\t$4",
+				"#else",
+				"\t$0",
+        "#endif"
+    ],
+    "description": "#if conditional compilation"
+	},
+	"else": {
+    "prefix": "#else",
+    "body": [
+        "#else",
+        "\t$0"
+    ],
+    "description": "alternative condition"
+	},
+}
